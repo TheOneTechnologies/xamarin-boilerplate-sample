@@ -116,6 +116,8 @@
 			<string>Editor</string>
 		</dict>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>FacebookAppID</key>
 	<string>Add your facebook app id here</string>
 	<key>FacebookDisplayName</key>
