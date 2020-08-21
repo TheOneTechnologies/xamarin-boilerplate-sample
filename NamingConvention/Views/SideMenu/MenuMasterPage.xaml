@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NamingConvention.Views.SideMenu.MenuMasterPage"
+            xmlns:menupages="clr-namespace:NamingConvention.Views.SideMenu"
+            xmlns:Detailpages="clr-namespace:NamingConvention.Views.DashBoard"
+                  xmlns:tabpage="clr-namespace:NamingConvention.Views.TabbedPageView"
+                  Title="Master" IconImageSource="ic_menu">
+    <MasterDetailPage.Master>
+        <menupages:SideMenu x:Name="sideMenu"/>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <tabpage:TabbedPagesView />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

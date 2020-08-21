@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NamingConvention.Utilities.StaticAppResources.Fonts">
+
+    <!-- Application Fonts -->
+  
+    <OnPlatform x:Key="Roboto-Light" x:TypeArguments="x:String" iOS="Roboto-Light" Android="Roboto-Light.ttf#Roboto-Light"/>
+    <OnPlatform x:Key="Roboto-Regular" x:TypeArguments="x:String" iOS="Roboto-Regular" Android="Roboto-Regular.ttf#Roboto-Regular"/>
+    <OnPlatform x:Key="Roboto-Bold" x:TypeArguments="x:String" iOS="Roboto-Bold" Android="Roboto-Bold.ttf#Roboto-Bold"/>
+    <OnPlatform x:Key="Roboto-Medium" x:TypeArguments="x:String" iOS="Roboto-Medium" Android="Roboto-Medium.ttf#Roboto-Medium"/>
+    <OnPlatform x:Key="Roboto-Black" x:TypeArguments="x:String" iOS="Roboto-Black" Android="Roboto-Black.ttf#Roboto-Black"/>
+     <OnPlatform x:Key="Roboto-BoldItalic" x:TypeArguments="x:String" iOS="Roboto-BoldItalic" Android="Roboto-BoldItalic.ttf#Roboto-BoldItalic"/>
+    <!-- Application Fonts -->
+</ResourceDictionary>

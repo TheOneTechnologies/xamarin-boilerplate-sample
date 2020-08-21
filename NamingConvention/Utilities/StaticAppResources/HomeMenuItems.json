@@ -1,0 +1,28 @@
+{
+  "Items": [
+    {
+      "Title": "Homework",
+      "Image": "ic_homework"
+    },
+    {
+      "Title": "News",
+      "Image": "ic_news"
+    },
+    {
+      "Title": "Photo Gallery",
+      "Image": "ic_photo_gallery"
+    },
+    {
+      "Title": "Calendar",
+      "Image": "ic_calendar"
+    },
+    {
+      "Title": "Birthdays",
+      "Image": "ic_birthday"
+    },
+    {
+      "Title": "TimeTable",
+      "Image": "ic_calendar"
+    }
+  ]
+}

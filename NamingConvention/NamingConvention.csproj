@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>NamingConvention.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>NamingConvention.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.446" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Plugin.Connectivity" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.1.0.714" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1269" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.3.10" />
+    <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="ViewModels\Login\" />
+    <Folder Include="ViewModels\Base\" />
+    <Folder Include="Service\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\RequestModels\" />
+    <Folder Include="Models\ResponseModels\" />
+    <Folder Include="Views\DashBoard\" />
+    <Folder Include="ViewModels\Dashboard\" />
+    <Folder Include="Views\CustomViews\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\App\" />
+    <Folder Include="Utilities\StaticAppResources\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Views\SideMenu\" />
+    <Folder Include="ViewModels\SideMenu\" />
+    <Folder Include="Views\DeviceDetails\" />
+    <Folder Include="Views\DownLoadMediaManger\" />
+    <Folder Include="ViewModels\DeviceDetails\" />
+    <Folder Include="ViewModels\DownloadMedia\" />
+    <Folder Include="DependencieServices\" />
+    <Folder Include="EventHandler\" />
+    <Folder Include="Views\PhotoGallary\" />
+    <Folder Include="ViewModels\PhotoGallery\" />
+    <Folder Include="Models\CommonModels\" />
+    <Folder Include="Views\ShowMap\" />
+    <Folder Include="Effects\" />
+    <Folder Include="Views\Social\" />
+    <Folder Include="Views\TabbedPageView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\HomeMenuItems.json" />
+    <None Remove="Utilities\StaticAppResources\HomeMenuItems.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Utilities\StaticAppResources\HomeMenuItems.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\App\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+    <Import Project="../CodeAnalysis.props" Condition="'$(Configuration)'!='Release'" />
+</Project>

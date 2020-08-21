@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="NamingConvention.Views.TabbedPageView.TabbedPagesView"
+             xmlns:dashTab="clr-namespace:NamingConvention.Views.DashBoard"
+             xmlns:mapTab="clr-namespace:NamingConvention.Views.ShowMap"
+            xmlns:photoTab="clr-namespace:NamingConvention.Views.PhotoGallary"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources">
+
+     <dashTab:DashBoard IconImageSource="{x:Static resoruce:AppImages.HomeIcon}" BackgroundColor="Transparent"/>
+     <photoTab:PhotoGallary IconImageSource="{x:Static resoruce:AppImages.PhotoGalleryIcon}" BackgroundColor="Transparent"/>
+     <mapTab:ShowMap IconImageSource="{x:Static resoruce:AppImages.MapIcon}" BackgroundColor="Transparent"/>
+</TabbedPage>

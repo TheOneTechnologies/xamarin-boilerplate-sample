@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="NamingConvention.App.App"
+    xmlns:customViews="clr-namespace:NamingConvention.Views.CustomViews"
+    xmlns:fonts="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+    xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources">
+
+    <Application.Resources>
+        <ResourceDictionary>
+             <!-- Merge Font Resources -->
+             <ResourceDictionary.MergedDictionaries>
+                <fonts:Fonts/>
+             </ResourceDictionary.MergedDictionaries>
+             <!-- Merge Font Resources -->
+
+             <!-- Common Style -->
+             <Style x:Key="CommonContentPageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.AppTheme}"/>
+             </Style>
+             <Style x:Key="WhiteBoxViewStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.White}"/>
+             </Style>
+             <Style x:Key="GryaBoxViewStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.Gray}"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="HeightRequest" Value="2"/>
+             </Style>
+             <Style x:Key="NavigationBarLabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="FontFamily" Value="{StaticResource Roboto-BoldItalic}"/>
+                <Setter Property="TextColor" Value="{x:Static resoruce:AppColors.White}"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+             </Style>
+             <Style x:Key="CommonEntryStyle" TargetType="customViews:CustomEntry">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.White}"/>
+                <Setter Property="FontFamily" Value="{StaticResource Roboto-Regular}"/>
+             </Style>
+             <Style x:Key="CommonButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.Shadow}"/>
+                <Setter Property="TextColor" Value="{x:Static resoruce:AppColors.White}"/>
+                <Setter Property="FontFamily" Value="{StaticResource Roboto-Bold}"/>
+                <Setter Property="Padding" Value="30,0"/>
+                <Setter Property="Margin" Value="0,10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+             </Style>
+             <Style x:Key="CommonSideMenuLabelStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.AppTheme}"/>
+                <Setter Property="TextColor" Value="{x:Static resoruce:AppColors.White}"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="{StaticResource Roboto-Bold}"/>
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+             </Style>
+             <Style x:Key="CommonLabelStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.AppTheme}"/>
+                <Setter Property="TextColor" Value="{x:Static resoruce:AppColors.White}"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                 <Setter Property="FontFamily" Value="{StaticResource Roboto-Bold}"/>
+                <Setter Property="Margin" Value="10,10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+             </Style>
+             <Style x:Key="CommonBackButtonStyle" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="{x:Static resoruce:AppColors.Transparent}"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="WidthRequest" Value="25"/>
+                <Setter Property="Source" Value="{x:Static resoruce:AppImages.MenuIcon}"/>
+                <Setter Property="Margin" Value="10,0,0,0"/>
+             </Style>
+             <Style x:Key="PickerStyle" TargetType="Picker">
+                <Setter Property="Visual" Value="Material"/>
+                <Setter Property="TitleColor" Value="#C5C5C5"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="{StaticResource Roboto-Regular}"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+             </Style>
+             <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="IsClippedToBounds" Value="true"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="20,10"/>
+                <Setter Property="HeightRequest" Value="64"/>
+                <Setter Property="OutlineColor" Value="Black"/>
+             </Style>
+             <!-- Common Style -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

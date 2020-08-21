@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NamingConvention.Views.DownLoadMediaManger.DownloadMediaPage"
+             xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+             Style="{StaticResource CommonContentPageStyle}">
+
+    <StackLayout Style="{StaticResource CommonContentPageStyle}">
+        <Grid ColumnSpacing="10">
+            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource CommonButtonStyle}" x:Name="pdfText" Text="{x:Static resoruce:AppTexts.Pdf}" Command="{Binding pdfCommand}" CommandParameter="{Binding  Source={x:Reference pdfText},Path=Text}" FontSize="10"/>
+            <Button Style="{StaticResource CommonButtonStyle}" x:Name="imageText" Grid.Column="1" Text="{x:Static resoruce:AppTexts.Image}" Command="{Binding imageCommand}" CommandParameter="{Binding  Source={x:Reference imageText},Path=Text}" FontSize="10"/>
+            <Button Grid.Row="1" Style="{StaticResource CommonButtonStyle}" x:Name="audioText" Text="{x:Static resoruce:AppTexts.Audio}" Command="{Binding audioCommand}" CommandParameter="{Binding  Source={x:Reference audioText},Path=Text}" FontSize="10"/>
+            <Button Grid.Row="1" Style="{StaticResource CommonButtonStyle}" x:Name="videoText" Grid.Column="1" Text="{x:Static resoruce:AppTexts.Video}" Command="{Binding videoCommand}" CommandParameter="{Binding  Source={x:Reference videoText},Path=Text}" FontSize="10"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

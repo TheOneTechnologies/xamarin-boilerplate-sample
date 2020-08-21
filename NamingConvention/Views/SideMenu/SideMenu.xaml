@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NamingConvention.Views.SideMenu.SideMenu" Title="SideMenu"
+             xmlns:converter="clr-namespace:NamingConvention.Converter"
+             xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+             Style="{StaticResource CommonContentPageStyle}">
+    <StackLayout Style="{StaticResource CommonContentPageStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+             <StackLayout Margin="0,10">
+                 <Image Source="{x:Static resoruce:AppImages.AppLogo}" WidthRequest="110" HeightRequest="110" Aspect="AspectFit"/>
+            </StackLayout>
+            <ListView Margin="0,10" x:Name="listSideMenu" x:FieldModifier="public" Grid.Row="1" ItemsSource="{Binding sideMenuOptionDatas}" Style="{StaticResource CommonContentPageStyle}" SeparatorColor="{x:Static resoruce:AppColors.White}"  SelectedItem="{Binding SideMenuOption, Mode=TwoWay}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Title}" Style="{StaticResource CommonSideMenuLabelStyle}"/>
+                                <Image Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Source="{x:Static resoruce:AppImages.SideMenuDetail}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </Grid>
+       
+    </StackLayout>
+</ContentPage>

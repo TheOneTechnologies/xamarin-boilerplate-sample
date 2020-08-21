@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseContent:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NamingConvention.Views.Login.Login"
+    xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+    xmlns:baseContent="clr-namespace:NamingConvention.Views.Base"
+    xmlns:customViews="clr-namespace:NamingConvention.Views.CustomViews"
+    Style="{StaticResource CommonContentPageStyle}">
+    <ScrollView VerticalOptions="CenterAndExpand">
+        <Grid>
+           <Grid.RowDefinitions>
+              <RowDefinition Height="80"/>
+              <RowDefinition Height="*"/>
+           </Grid.RowDefinitions>
+           <Image Source="{x:Static resoruce:AppImages.AppLogo}"/>
+
+           <Frame Grid.Row="1" HasShadow="False" CornerRadius="4" Margin="10,0,10,0" Padding="15">
+              <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="{x:Static resoruce:AppColors.White}">
+                    <customViews:CustomEntry Style="{StaticResource CommonEntryStyle}" Placeholder="{x:Static resoruce:AppTexts.LoginUserNamePlaceHolder}" Text="{Binding UserName}"/>
+                    <BoxView Style="{StaticResource GryaBoxViewStyle}"/>
+                    <customViews:CustomEntry Style="{StaticResource CommonEntryStyle}" Placeholder="{x:Static resoruce:AppTexts.LoginPasswordPlaceHolder}" IsPassword="True" Text="{Binding Password}"/>
+                    <BoxView Style="{StaticResource GryaBoxViewStyle}"/>
+                  <Picker  Visual="Material" Style="{StaticResource PickerStyle}" Title="{x:Static resoruce:AppTexts.SelectSchoolTitle}" HorizontalOptions="FillAndExpand" x:Name="schoolPicker" SelectedItem="{Binding SelectedSchool}"  ItemDisplayBinding="{Binding SchoolName}" ItemsSource="{Binding SchoolList}" />
+                  <BoxView Style="{StaticResource GryaBoxViewStyle}"/>
+                  
+                    <Button  Style="{StaticResource CommonButtonStyle}" Text="{x:Static resoruce:AppTexts.LoginButtonText}" Command="{Binding LoginCommand}"/>
+                  <Grid>
+                      <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="1*"/>
+                          <ColumnDefinition Width="1*"/>
+                      </Grid.ColumnDefinitions>
+
+                      <Button  Style="{StaticResource CommonButtonStyle}" Text="{x:Static resoruce:AppTexts.FacebookButtonText}" Command="{Binding FacebookCommand}"/>
+
+                      <Button Grid.Column="1" Style="{StaticResource CommonButtonStyle}" Text="{x:Static resoruce:AppTexts.GoogleButtonText}" Command="{Binding GoogleCommand}"/>
+
+                  </Grid>
+              </StackLayout>
+           </Frame>
+        </Grid>
+    </ScrollView>
+</baseContent:BaseContentPage>

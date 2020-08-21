@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NamingConvention.Views.DeviceDetails.DeviceDetailPage"
+             xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+             Style="{StaticResource CommonContentPageStyle}">
+
+    <StackLayout Style="{StaticResource CommonContentPageStyle}">
+
+    <Label Text="{Binding VersionNumber}" Style="{StaticResource CommonLabelStyle}"/>
+    <Label Text="{Binding BuildNumber}" Style="{StaticResource CommonLabelStyle}"/>
+
+    <ListView Margin="0,10" x:Name="listDeviceInfo" Footer="" x:FieldModifier="public" ItemsSource="{Binding deviceDetails}" Style="{StaticResource CommonContentPageStyle}" SeparatorColor="{x:Static resoruce:AppColors.White}"  SelectedItem="{Binding SelectedDetail, Mode=TwoWay}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalOptions="StartAndExpand" Text="{Binding InformationTitle}" Style="{StaticResource CommonSideMenuLabelStyle}"/>
+                                <Label Grid.Column="1"  HorizontalOptions="FillAndExpand" Text="{Binding InformationData}" Style="{StaticResource CommonSideMenuLabelStyle}"/> 
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,13 @@
+{"home_menu": [{"title": "Homework",
+    "image": "ic_homework"
+  },{"title": "News",
+    "image": "ic_news"
+  },{"title": "Photo Gallery",
+    "image": "ic_photo_gallery"
+  },{"title": "Calendar",
+    "image": "ic_calendar"
+  },{"title": "Birthdays",
+    "image": "ic_birthday"
+  },{"title": "TimeTable",
+    "image": "ic_calendar"
+  }]}

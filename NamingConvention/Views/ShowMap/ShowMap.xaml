@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseContent:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:baseContent="clr-namespace:NamingConvention.Views.Base"
+             xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+             xmlns:xamarinmaps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             Style="{StaticResource CommonContentPageStyle}"
+             x:Class="NamingConvention.Views.ShowMap.ShowMap">
+     <Grid Style="{StaticResource CommonContentPageStyle}">
+       <Grid.RowDefinitions>
+          <RowDefinition Height="48"/>
+          <RowDefinition Height="1"/>
+          <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+       <Grid>
+           <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="35"/>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="35"/>
+           </Grid.ColumnDefinitions>
+
+           <ImageButton Style="{StaticResource CommonBackButtonStyle}" Command="{Binding menuCommand}"/>
+           <Label Grid.Column="1" Style="{StaticResource NavigationBarLabelStyle}" Text="{x:Static resoruce:AppTexts.ShowMapTitle}" />
+       </Grid>
+       <BoxView Style="{StaticResource WhiteBoxViewStyle}" Grid.Row="1"/>
+
+          <StackLayout Grid.Row="2">
+            <xamarinmaps:Map x:Name="mymap" IsVisible="false" HasZoomEnabled="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  IsShowingUser = "true" />
+        </StackLayout>
+       
+
+    </Grid>
+</baseContent:BaseContentPage>

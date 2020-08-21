@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseContent:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NamingConvention.Views.DashBoard.DashBoard"
+    xmlns:baseContent="clr-namespace:NamingConvention.Views.Base"
+    xmlns:resoruce="clr-namespace:NamingConvention.Utilities.StaticAppResources"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:flowListView="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+    Style="{StaticResource CommonContentPageStyle}">
+
+    <Grid Style="{StaticResource CommonContentPageStyle}">
+       <Grid.RowDefinitions>
+          <RowDefinition Height="48"/>
+          <RowDefinition Height="1"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+       <Grid>
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="35"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="35"/>
+          </Grid.ColumnDefinitions>
+
+           <ImageButton Style="{StaticResource CommonBackButtonStyle}" Command="{Binding menuCommand}"/>
+           <Label Style="{StaticResource  NavigationBarLabelStyle}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="{x:Static resoruce:AppTexts.DashBoardTitle}" Grid.Column="1"/>
+       </Grid>
+       <BoxView Style="{StaticResource WhiteBoxViewStyle}" Grid.Row="1"/>
+          <Frame BackgroundColor="Gray" Grid.Row="2" Style="{StaticResource FrameStyle}">
+             <StackLayout>
+                 <Label Style="{StaticResource NavigationBarLabelStyle}" Text="{x:Static resoruce:AppTexts.DashboardTheOneName}" />
+             </StackLayout>
+        </Frame>
+       <flowListView:FlowListView Grid.Row="3" FlowColumnCount="3" VerticalScrollBarVisibility="Never"
+                            Margin="5" SeparatorVisibility="None" HasUnevenRows="False" RowHeight="100"
+                            FlowItemsSource="{Binding DashBoardOptions}"  FlowItemTappedCommand="{Binding DashBoardItemClickCommand}"   BackgroundColor="Transparent"> 
+             <flowListView:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                   <Grid Margin="5">
+                         <pancakeView:PancakeView>
+                             <StackLayout  Spacing="0" BackgroundColor="{x:Static resoruce:AppColors.Shadow}" Opacity="0.8">
+                                 <Image Source="{Binding Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  HeightRequest="30" WidthRequest="30" Margin="0,10,0,0"/>
+                                 <Label Text="{Binding Title}" FontFamily="{StaticResource Roboto-BoldItalic}" FontAttributes="Bold" TextColor="{x:Static resoruce:AppColors.White}" FontSize="15"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,2"/>
+                             </StackLayout>
+                         </pancakeView:PancakeView>
+                         <pancakeView:PancakeView IsVisible="{Binding UnreadCountVisible}" CornerRadius="13" HeightRequest="26" WidthRequest="26" BorderColor="Black" BorderThickness="2" BackgroundColor="Red" HorizontalOptions="End" VerticalOptions="Start">
+                            <Label Text="{Binding UnReadCount}" MaxLines="1" LineBreakMode="TailTruncation" FontSize="10" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                         </pancakeView:PancakeView>
+                   </Grid>
+                </DataTemplate>
+             </flowListView:FlowListView.FlowColumnTemplate>
+       </flowListView:FlowListView>
+    </Grid>
+</baseContent:BaseContentPage>
